@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.contentMain {
+  height: 100vh; /* Volle Bildschirmhöhe */
+}
+
+.navbar {
+  height: 60px; /* Höhe der Navigationsleiste */
+  background-color: #333;
+  color: white;
+}
+
+
+
+

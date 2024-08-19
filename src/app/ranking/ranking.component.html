@@ -1,0 +1,41 @@
+<div class="contentMain">
+  <div class="headerRanking">
+    <div class="logo">
+      <img src="assets/Bilder/statistics-24.png" alt="Logo">
+    </div>
+    <div class="text">
+      <h3>Ranking</h3>
+    </div>
+    <div class="icon">
+      <img src="assets/Bilder/info-24.png" alt="Icon">
+    </div>
+  </div>
+
+
+  <input type="text" [(ngModel)]="searchText" placeholder="Search by Duck Number" (input)="applyFilter()" />
+
+  <ng-container *ngIf="rankingData.length > 0; else noData">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Platz</th>
+          <th>Entennummer</th>
+          <th>Gewinn</th>
+          <th>Sponsor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of rankingData">
+          <td>{{ entry.rank }}</td>
+          <td>{{ entry.ducknumber }}</td>
+          <td>{{ entry.award?.award || 'keinen Gewinn' }}</td>
+          <td>{{ entry.award?.sponsor || '' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+
+  <ng-template #noData>
+    <p>No data found.</p>
+  </ng-template>
+</div>
